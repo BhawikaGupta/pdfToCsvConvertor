@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Data Parsing</title>
+
+    <!-- Bootstrap core CSS -->
+    <link  href="{{ url_for('static', filename = 'vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename = 'css/one-page-wonder.css') }}" rel="stylesheet">
+
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg row">
+      
+        <div class="collapse navbar-collapse col-sm-1 col-lg-1 col-md-1" id="navbarResponsive">
+            &nbsp; 
+        </div>
+        <div class="col-sm-2 col-lg-2 col-md-2 col-sm-2 col-lg-2 col-md-2"><a class="navbar-brand" href="#" style="color:#069edb;">Data Parsing</a></div>
+        <div class="collapse navbar-collapse col-sm-7 col-lg-7 col-md-7" id="navbarResponsive">
+            &nbsp; 
+        </div>
+        <div class="collapse navbar-collapse col-sm-2 col-lg-2 col-md-2" id="navbarResponsive">
+            <img src="{{ url_for('static', filename = 'images/download.png') }}"  class="pull-right" style="width:100px; height:100px;">  
+        </div>
+      
+    </nav>
+
+    <header class="masthead">
+	<div class="overlay">
+        <div class="container label" style="text-align:center;">
+          
+        {% for key, value in rows.items() %}	
+			{{ key }}:{{ value }}
+
+		{% endfor %}
+
+           
+        </div>
+		
+		<hr>
+			<form action="http://127.0.0.1:5000/downloads/{{filename}}" id="download">  
+			<div class="text-center">
+				<input type="submit" class="btn btn-primary" value="Download Your File" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
+			</div>
+			</form
+        </div>
+      </div>
+      
+    </header>
+
+    <br>
+
+    
+
+</div>
+
+
+    <!-- Footer -->
+    <footer class="py-5">
+      <div class="container" style="color:#069edb;">
+        <p class="m-0 text-center">Copyright &copy; Agrevolution</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ url_for('static', filename = 'vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'vendor/popper/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'vendor/jquery/bootbox.min.js') }}"></script>
+  
+  </body>
+	   <script>
+	  
+
+
+		document.getElementById('filename').innerHTML = fileName;
+		document.getElementById('data_cont').innerHTML = "<pre>"+fileContent+"</pre>";
+		$('#download').attr('action', 'http://127.0.0.1:5000/downloads/'+fileName);
+
+		};
+		
+	  
+	  </script>
+</html>

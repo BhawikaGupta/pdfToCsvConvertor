@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Data Parsing</title>
+
+    <!-- Bootstrap core CSS -->
+    <link  href="{{ url_for('static', filename = 'vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename = 'css/one-page-wonder.css') }}" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg row">
+      
+        <div class="collapse navbar-collapse col-sm-1 col-lg-1 col-md-1" id="navbarResponsive">
+            &nbsp; 
+        </div>
+        <div class="col-sm-2 col-lg-2 col-md-2 col-sm-2 col-lg-2 col-md-2"><a class="navbar-brand" href="#" style="color:#069edb;">Data Parsing</a></div>
+        <div class="collapse navbar-collapse col-sm-7 col-lg-7 col-md-7" id="navbarResponsive">
+            &nbsp; 
+        </div>
+        <div class="collapse navbar-collapse col-sm-2 col-lg-2 col-md-2" id="navbarResponsive">
+            <img src="{{ url_for('static', filename = 'images/download.png') }}"  class="pull-right" style="width:100px; height:100px;">  
+        </div>
+      
+    </nav>
+
+    <header class="masthead">
+	<div class="overlay">
+        <div class="container">
+          
+        
+        <form action="http://127.0.0.1:5000/upload_file" method=post enctype=multipart/form-data >
+            <div class="modal-body">
+			  <div class="form-group row">
+				<label for="recipient-name" class="col-sm-4 col-form-label label">Query Variable:</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control" id="query_variable" name="query_variable" placeholder="Please enter the query variable">
+				</div>
+			  </div>
+			  <div class="form-group row">
+				<label for="message-text" class="col-sm-4 col-form-label label">Query Year:</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control" id="query_year" name="query_year" placeholder="Please enter the relevant year">
+				</div>
+			  </div>
+			  <div class="form-group row">
+				<label for="message-text" class="col-sm-4 col-form-label label">Please upload balance sheet:</label>
+				<div class="col-sm-6">
+					<input type=file name = "file" class="label"/>
+				</div>	
+			  </div>
+			  <div class="form-group row">
+				<label for="message-text" class="col-sm-4 col-form-label label">&nbsp;</label>
+				<button class="btn btn-primary col-sm-2" type="submit">Upload</button>
+			 </div>
+        
+      </div>
+      
+          </form>
+           
+        </div>
+        </div>
+      </div>
+      
+    </header>
+
+    <br>
+
+    
+
+</div>
+
+
+    <!-- Footer -->
+    <footer class="py-5">
+      <div class="container" style="color:#069edb;">
+        <p class="m-0 text-center">Copyright &copy; Agrevolution</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ url_for('static', filename = 'vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'vendor/popper/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'vendor/jquery/bootbox.min.js') }}"></script>
+  
+  </body>
+ 
+
+</html>
